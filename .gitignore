@@ -1,0 +1,44 @@
+# History files
+.Rhistory
+.Rapp.history
+
+# Session data
+.RData
+.rds
+
+# RStudio files
+.Rproj.user/
+
+# Project-specific files
+.DS_Store # macOS specific
+Thumbs.db # Windows specific
+
+# R package build files
+*.Rcheck/
+*.tar.gz
+*.zip
+*.log
+
+# Vignette build files
+vignettes/*.html
+vignettes/*.pdf
+
+# Cache and temporary directories
+.cache/
+tmp/
+temp/
+
+# Data files (if not intended for version control)
+# data/
+# raw_data/
+
+# Output files (if not intended for version control)
+# results/
+# figures/
+# output/
+
+# Other common files to ignore
+*~
+*.bak
+*.swp
+.httr-oauth
