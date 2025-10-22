@@ -8,7 +8,7 @@ Date: October 2025
 
 ## Overview
 
-This replication package accompanies the manuscript “Multi-Source Machine Learning for Opqaue Organzations.”
+This replication package accompanies the manuscript “Multi-Source Machine Learning for Opqaue Organizations.”
 It provides the code, processed data, and environment files necessary to reproduce the analyses and figures reported in the article.
 
 The project applies interpretable machine learning and topic modeling to analyze official communications and behavioral indicators of al-Qaeda in the Arabian Peninsula (AQAP), demonstrating how transparent modeling can illuminate the evolution of covert organizations.
@@ -17,17 +17,17 @@ This project uses NLP (via the Structural Topic Model) and machine learning (Str
 
 ## Structure
 
-Replication/\\
-├── code/\\
-│   ├── AQAP_Growth_Viz.R\\
-│   ├── AQAP-Dyad-Plot.R\\
-│   ├── randomForest_2025.R\\
-│   ├── dataPrep.R\\
-│   ├── gen_topic_clusters_2025.R\\
-│   ├── PlotTopicClusters.R\\
-│   └── master_run.R   # Main orchestration script\\
-│
-├── data/                # Input data (processed only)
+0. Replication
+1. code:
+master_run.R # Main orchestration script
+AQAP_Growth_Viz.R
+AQAP-Dyad-Plot.R
+randomForest_2025.R
+dataPrep.R
+gen_topic_clusters_2025.R
+PlotTopicClusters.R
+
+2. data # Input data
 │   ├── aqap_growth.csv
 │   ├── ucdp_summary.csv
 │   ├── tfidf_merged_576.csv
