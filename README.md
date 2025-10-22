@@ -1,4 +1,4 @@
-# Replication Package: Multi-Source Machine Learning for Opqaue Organzations
+# Replication Package: Multi-Source Machine Learning for Opaque Organizations
 Measuring Strategic Change in Data-Sparse Environments
 
 Author: Margaret J. Foster
