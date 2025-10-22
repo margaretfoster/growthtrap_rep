@@ -1,10 +1,16 @@
 # Replication Package: Multi-Source Machine Learning for Opaque Organizations
 Measuring Strategic Change in Data-Sparse Environments
 
-Author: Margaret J. Foster
-Affiliation: National Security and Data Policy Institute, University of Virginia
-Contact: m.jenkins.foster@gmail.com
-Date: October 2025
+### Author: 
+Margaret J. Foster
+
+### Affiliation: 
+National Security and Data Policy Institute, University of Virginia
+
+### Contact: 
+m.jenkins.foster@gmail.com
+### Date: 
+October 2025
 
 ## Overview
 
