@@ -17,16 +17,15 @@ This project uses NLP (via the Structural Topic Model) and machine learning (Str
 
 ## Structure
 
-Replication/
-│
-├── code/                # All analysis scripts
-│   ├── AQAP_Growth_Viz.R
-│   ├── AQAP-Dyad-Plot.R
-│   ├── randomForest_2025.R
-│   ├── dataPrep.R
-│   ├── gen_topic_clusters_2025.R
-│   ├── PlotTopicClusters.R
-│   └── master_run.R       # Main orchestration script
+Replication/\\
+├── code/\\
+│   ├── AQAP_Growth_Viz.R\\
+│   ├── AQAP-Dyad-Plot.R\\
+│   ├── randomForest_2025.R\\
+│   ├── dataPrep.R\\
+│   ├── gen_topic_clusters_2025.R\\
+│   ├── PlotTopicClusters.R\\
+│   └── master_run.R   # Main orchestration script\\
 │
 ├── data/                # Input data (processed only)
 │   ├── aqap_growth.csv
@@ -46,7 +45,6 @@ Replication/
 ├── renv/                # R environment management files
 │
 └── README.md            # This document
-
 
 ## Data and Sources
 All data are derived from processed and tagged sources.
