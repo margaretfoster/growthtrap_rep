@@ -99,4 +99,4 @@ Proprietary text data are represented only in derived and aggregated form.
 
 If you use these materials, please cite:
 
-Foster, M. J. (2025).  Multi-Source Machine Learning for Opqaue Organzations. Manuscript under review at PLOS ONE.
+Foster, M. J. (2025).  Multi-Source Machine Learning for Open Organizations. Manuscript under review at PLOS ONE.
