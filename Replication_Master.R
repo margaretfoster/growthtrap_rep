@@ -1,59 +1,66 @@
+# Load renv environment
+if (!requireNamespace("renv", quietly = TRUE)) install.packages("renv")
+renv::activate()
 
-## Data:
-## Starting from processed and tagged data
-## For both communiques and stories
-## Reason: The formatted articles are proprietary
-## So my agreement was that I could distribute processed data objects rather than original data.
+## Load libraries needed:
+## MJF To do: deduplify and standardize into a
+## renv() lock,
 
-## AQAP Descriptive Statistics:
+required_packages <- c('tidyverse','dplyr', "here",
+                'randomForest','caret',
+                'ggplot2', 'ggalluvial', 'readr', 
+              'RColorBrewer', 'reshape2')
 
+invisible(lapply(required_packages, function(pkg) {
+  if (!requireNamespace(pkg, quietly = TRUE)) install.packages(pkg)
+  library(pkg, character.only = TRUE)
+}))
+
+# Set directory paths 
+rootPath   <- here::here() #sets directories relative to where this script is
+dataPath   <- file.path(rootPath, "data")
+codePath   <- file.path(rootPath, "code")
+figPath    <- file.path(rootPath, "figures")
+outPath    <- file.path(rootPath, "outputs")
+
+## MJF To-Do: modify the header notes into the readme
+
+##  Descriptive Statistics:
 # Small script to produce AQAP growth plot
 # from REVMOD data
-source("AQAP_Growth_Viz.R")
+source(file.path(codePath, "AQAP_Growth_Viz.R"), local = TRUE)
 # In: rdynv2_AQAP_subset.csv (revmod subset)
 # Out: aqapgrowthchart.pdf
 
 ## Use UCDP data to plot dyad patterns across time:
-source("AQAP-Dyad-Plot.R")
+source(file.path(codePath,"AQAP-Dyad-Plot.R"), local = TRUE)
 # In: gedevents-2021-AQAP2.csv (ucdp AQAP subset)
 # Out: AQAPActivities.pdf
 
-## Random Forest and TSNE analysis
-
-# RF stratified to account for imbalance
-# This version has the tsne & visualization code
-source("randomForestAndPCA2022.R")
+## Random Forest classification
+source(file.path(codePath,"randomForest_2025.R"), local = TRUE)
 # In: develop_df.csv, validate_df.csv
-# Out: training/test confusion matrices
-# pca_proximityRF.pdf, randomForestRes.pdf
-# Dev and validation tsne visualization plots
+# Out: random forest results and diagnostics
 
-# Script to generate the K-fold misclassification
-# Probability between Ansar al-Shariah and AQAP:
-# Stratified Random Forest
-source("stratifiedKfoldRandomForestJustSunni.R")
-# In: develop_df.csv, validate_df.csv
-# Out: KfoldClassErrorSunniOnly.pdf, randomForestComparison.pdf
- 
-# Topic Model Topic Clusters
-source("PlotTopicClusters.R")
-#In, modified STM Utils: STMfunctionsalt.R, plotcontinuousalt.R
+##%%%%%%%%%%%%%%%%
+## Topic Modeling: Prep and Details
+##%%%%%%%%%%%%%%%% 
+
+## Data preparation steps:
+source(file.path(codePath, "dataPrep.R"), local =TRUE)
+
+# Topic Model Thematic Groupings
+# script implements custom topic grouping
+# NOTE: this is vulnerable to breaking changes in underlying STM infrastructure
+# Replication option 1: run using gen_topic_clusters_2025.R 
+# Option 2 (default): use precomputed clusters for system and version robustness
+source(file.path(codePath,"gen_topic_clusters_2025.R"), local = TRUE)  #optional, runs in a local environment
+# Calls modified STMuUtils: STMfunctionsalt.R, plotcontinuousalt.R
 #produce_cmatrixalt.R, simbetasalt.R
 # In: selectModAQAP70UT.Rdata
-# Out: localtranscluster.pdf
+# Out precomputed_topic_groups.RData
 
-## Topic model visualss
-source("UT70SelectModPlots_C.R")
-#In: selectModAQAP70UT.Rdata
-#Out:
-# Out- Data: estimatedEffect_UT70_18Model.Rdata
-# Out- plots: topicProportions_UT70EDModel.pdf,
-# HouthiandLT_UT7_K18_top.pdf,
-# HouthiandLT_UT7_K18_bottom.pdf
-# AASAndMiscYemen_UT7_K18_top.pdf,
-# AASAndMiscYemen_UT7_K18_bottom.pdf
-# ClashFactions_UT7_K18_top.pdf,
-# ClashFactions_UT7_K18_bottom.pdf
-# TransJihadiAlt_UT7_K18_top.pdf,
-# TransJihadiAlt_UT7_K18_bottom.pdf
+source(file.path(codePath,"PlotTopicClusters.R"), local=TRUE) 
+# in: precomputed_topic_groups.RData
+# Out: localtranscluster.pdf
 
