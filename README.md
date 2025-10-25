@@ -102,6 +102,12 @@ figures/localtranscluster.pdf    Temporal trends in local vs transnational topic
 - Proprietary text data are represented only in processed or aggregated form; these are sufficient to reproduce all figures and results in the paper.
 - Figures and outputs will be generated into `figures/` and `outputs/` directories automatically.
 
+## Keywords
+interpretable machine learning, topic modeling, organizational change, terrorism, replication, structural topic model
+
+## License
+This replication package is distributed under the MIT License.  
+Users may reuse and adapt the code with attribution.
 
 ## Citation
 
