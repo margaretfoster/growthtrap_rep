@@ -88,6 +88,8 @@ install.packages("renv")
 renv::restore()
 source("code/master_run.R")
 ```
+The project automatically activates renv when opened. 
+If running from the command line, first run renv::activate() manually before sourcing the replication script.
 
 ## Outputs
 figures/aqapgrowthchart.pdf    AQAP organizational growth (REVMOD data)
