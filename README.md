@@ -14,7 +14,7 @@ October 2025
 
 ## Overview
 
-This replication package accompanies the manuscript “Multi-Source Machine Learning for Opqaue Organizations.”
+This replication package accompanies the manuscript “Multi-Source Machine Learning for Opaque Organizations.”
 It provides the code, processed data, and environment files necessary to reproduce the analyses and figures reported in the article.
 
 The project applies interpretable machine learning and topic modeling to analyze official communications and behavioral indicators of al-Qaeda in the Arabian Peninsula (AQAP), demonstrating how transparent modeling can illuminate the evolution of covert organizations.
@@ -23,34 +23,36 @@ This project uses NLP (via the Structural Topic Model) and machine learning (Str
 
 ## Structure
 
-0. Replication
-1. code:
-master_run.R # Main orchestration script
-AQAP_Growth_Viz.R
-AQAP-Dyad-Plot.R
-randomForest_2025.R
-dataPrep.R
-gen_topic_clusters_2025.R
-PlotTopicClusters.R
-
-2. data # Input data
-│   ├── aqap_growth.csv
-│   ├── ucdp_summary.csv
-│   ├── tfidf_merged_576.csv
-│   ├── stm_processed_corpus.RData
-│   ├── selectModAQAP70UT.RData
-│   └── precomputed_topic_groups.RData
+```markdown
+## Directory Structure
+├── code/ # Analysis and plotting scripts
+│ ├── master_run.R # Main orchestration script
+│ ├── AQAP_Growth_Viz.R
+│ ├── AQAP-Dyad-Plot.R
+│ ├── randomForest_2025.R
+│ ├── dataPrep.R
+│ ├── gen_topic_clusters_2025.R
+│ └── PlotTopicClusters.R
 │
-├── figures/             # Generated figures (output)
-│   ├── aqapgrowthchart.pdf
-│   ├── AQAPActivities.pdf
-│   └── localtranscluster.pdf
+├── data/ # Input and intermediate data
+│ ├── aqap_growth.csv
+│ ├── ucdp_summary.csv
+│ ├── tfidf_merged_576.csv
+│ ├── stm_processed_corpus.RData
+│ ├── selectModAQAP70UT.RData
+│ └── precomputed_topic_groups.RData
 │
-├── outputs/             # Model objects, diagnostics, etc.
+├── figures/ # Output figures
+│ ├── aqapgrowthchart.pdf
+│ ├── AQAPActivities.pdf
+│ └── localtranscluster.pdf
 │
-├── renv/                # R environment management files
+├── outputs/ # Model outputs, diagnostics, etc.
 │
-└── README.md            # This document
+├── renv/ # Local R environment files
+│
+└── README.md # This document
+```
 
 ## Data and Sources
 All data are derived from processed and tagged sources.
@@ -93,16 +95,16 @@ figures/AQAPActivities.pdf    UCDP dyad activity patterns
 outputs/randomForest_results.csv    Random forest performance metrics
 figures/localtranscluster.pdf    Temporal trends in local vs transnational topic clusters
 
-##Notes on Replicability
+## Notes on Replicability
 
-The STM portion relies on precomputed topic distributions to ensure stability across package versions.
+- All analyses assume the project root is set using `here::here()`.
+- The STM components rely on **precomputed topic distributions** to avoid instability from changes in the `stm` package over time.
+- Proprietary text data are represented only in processed or aggregated form; these are sufficient to reproduce all figures and results in the paper.
+- Figures and outputs will be generated into `figures/` and `outputs/` directories automatically.
 
-All scripts assume the project is run using here::here() for relative paths.
 
-Proprietary text data are represented only in derived and aggregated form.
-
-##Citation
+## Citation
 
 If you use these materials, please cite:
 
-Foster, M. J. (2025).  Multi-Source Machine Learning for Open Organizations. Manuscript under review at PLOS ONE.
+Foster, M. J. (2025).  Multi-Source Machine Learning for Opaque Organizations. Manuscript under review at PLOS ONE.
