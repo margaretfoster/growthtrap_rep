@@ -11,7 +11,9 @@
 .Rproj.user/
 
 # Project-specific files
-renv/*
+renv/library/
+renv/staging/
+.DS_Store
 *.DS_Store # macOS specific
 *Thumbs.db # Windows specific
 
