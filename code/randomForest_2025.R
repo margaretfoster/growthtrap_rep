@@ -5,10 +5,8 @@ set.seed(6889)
 # merging both the "dev" and "val" sets
 # and validated via cross-validation
 
-dev <- readr::read_csv(file.path(dataPath,"develop_df.csv"), 
-                stringsAsFactors = FALSE)
-val <- readr::read_csv(file.path(dataPath, "validate_df.csv"), 
-                stringsAsFactors = FALSE)
+dev <- readr::read_csv(file.path(dataPath,"develop_df.csv"))
+val <- readr::read_csv(file.path(dataPath, "validate_df.csv"))
 
 # Remove metadata
 meta_vars <- c("event.date", "storyid", "test", "X")

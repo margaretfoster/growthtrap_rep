@@ -6,23 +6,6 @@
 ## Initialization
 ############################
 
-rm(list=ls())
-
-loadPkg=function(toLoad){
-  for(lib in toLoad){
-  if(! lib %in% installed.packages()[,1])
-    { install.packages(lib, repos='http://cran.rstudio.com/') }
-  suppressMessages( library(lib, character.only=TRUE) ) }}
-
-#### probably longer, but more easy to read:
-
-
-visualization <- c("ggplot2", "stm")
-
-packs=c(visualization)
-
-loadPkg(packs)
-
 #######################################
 ## access the data:
 ######################################

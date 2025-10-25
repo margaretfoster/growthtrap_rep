@@ -7,17 +7,20 @@
 ## Initialization
 ############################
 #####################################
-## Load some custom scripts
+## Load custom helper scripts
 ####################################
+# Load helper scripts
 
-source("../helpers/STMfunctionsalt.R")
-source("../helpers/plotcontinuousalt.R")
-source("../helpers/produce_cmatrixalt.R")
-source("../helpers/simbetasalt.R")
+helpersPath <- file.path(here::here(), 
+                         "helpers")
+
+source(file.path(helpersPath, "STMfunctionsalt.R"), local = TRUE)
+source(file.path(helpersPath, "plotcontinuousalt.R"), local = TRUE)
+source(file.path(helpersPath, "produce_cmatrixalt.R"), local = TRUE)
+source(file.path(helpersPath, "simbetasalt.R"), local = TRUE)
 
 ####################################
 ## load prepped AQAP Corpus:
-## Looking for, but can't find:
 load(file.path(dataPath,"selectModAQAP70UT.Rdata"))
 
 ##########################################

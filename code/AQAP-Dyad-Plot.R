@@ -7,10 +7,9 @@
 
 ucdpAQAP <- readr::read_csv(file.path(dataPath,
                                       "gedevents-2021-AQAP2.csv"))
-
 ucdpAQAP$X <- NULL ## drop the added "X" row names
 
-dim(ucdpAQAP) ## 1272 x 48
+dim(ucdpAQAP) ## check data: 1272 x 48
 
 ##%%%%%%%%%%%%%%%
 ## Descriptive Statistics
