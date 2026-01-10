@@ -48,7 +48,7 @@ dataPath   <- file.path(rootPath, "data")
 codePath   <- file.path(rootPath, "code")
 figPath    <- file.path(rootPath, "figures")
 
-# Seed for reproducability:
+# Seed for reproducibility:
 set.seed(6889)
 
 ##  Descriptive Statistics:
@@ -94,12 +94,14 @@ if (use_precomputed) {
          local = TRUE)
 }
 
-# Plot topic cluster trends (always runs)
+# Plot topic cluster trends 
 source(file.path(codePath, "PlotTopicClusters.R"),
        local = TRUE)
 
+
 print("Replication finished!")
+
 ## Log session info:
 sink("sessionInfo.txt")
 sessionInfo()
-sink()
+sink(NULL)

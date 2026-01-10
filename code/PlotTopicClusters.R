@@ -67,15 +67,17 @@ transnational_color <- set3_colors[10]  # Second color (e.g., Transnational Jiha
 lines(uvals1, ## Local 
       clusteredmeans[[1]],
       col = local_color,
-      lty=5 #longdash
+      lty=5, #longdash
+      lwd = 3, # thicker line
       )
 lines(uvals1,## transnational
       clusteredmeans[[3]],
      col = transnational_color,
-      lty=3) #dotted
+      lty=3, #dotted
+      lwd = 3) #thicker line
     
-legend(x = max(uvals1) * 0.3,
-       y = -0.1,  # Posits the legend below the data
+legend(x = max(uvals1) * 0.45,
+       y = -0.2,  # Posits the legend below the data
       legend = c("Local Conflict", "Transnational Jihadi"),
       fill = c(local_color, transnational_color),
       #fill = c("gray8", "gray48"),
