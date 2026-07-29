@@ -115,4 +115,4 @@ Users may reuse and adapt the code with attribution.
 
 If you use these materials, please cite:
 
-Foster, M. J. (2025).  Multi-Source Machine Learning for Opaque Organizations. Manuscript under review at PLOS ONE.
+Foster, M. J. (2025).  Multi-Source Machine Learning for Opaque Organizations. (https://arxiv.org/abs/2602.00022)
